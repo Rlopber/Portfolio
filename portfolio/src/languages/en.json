@@ -4,5 +4,6 @@
     "about": "About Me",
     "projects": "Projects",
     "contact": "Contact"
-  }
+  },
+  "greeting": "Welcome to my portfolio"
 }
