@@ -3,7 +3,10 @@
     "home": "Inicio",
     "about": "Sobre mí",
     "projects": "Proyectos",
-    "contact": "Contacto"
+    "contact": "Contacto",
+    "contactBtn": "Contacto"
   },
-  "greeting": "Bienevenido mi portfolio"
+  "footer": {
+    "madeWith": "Hecho con ❤️ por"
+  }
 }

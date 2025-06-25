@@ -3,7 +3,10 @@
     "home": "Home",
     "about": "About Me",
     "projects": "Projects",
-    "contact": "Contact"
+    "contact": "Contact",
+    "contactBtn": "Get in Touch"
   },
-  "greeting": "Welcome to my portfolio"
+  "footer": {
+    "madeWith": "Made with ❤️ by"
+  }
 }
