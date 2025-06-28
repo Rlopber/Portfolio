@@ -9,9 +9,19 @@ export default function Header() {
   const [menuOpen, setMenuOpen] = useState(false);
 
   return (
-    <header className="bg-black text-white px-6 py-4 flex flex-row justify-between items-center gap-4 relative">
-      <div className="text-xl font-bold tracking-tight">
-        Ralowl<span className="text-indigo-400">.dev</span>
+    <header className="bg-black text-white px-6 py-6 flex flex-row justify-between items-center gap-4 relative">
+      <div className="font-bold tracking-tight uppercase text-left">
+        {/* Móvil y tablet: visible en xs y md, oculta en lg */}
+        <div className="flex flex-col lg:hidden text-xs md:text-xl">
+          <span>Raquel López Bermúdez</span>
+          <span className="text-indigo-400">{t("header.dev")}</span>
+        </div>
+
+        {/* Escritorio: visible solo en lg y superior */}
+        <div className="hidden lg:flex lg:items-center lg:gap-1 lg:text-lg">
+          Raquel López Bermúdez <span className="mx-1">-</span>{" "}
+          <span className="text-indigo-400">{t("header.dev")}</span>
+        </div>
       </div>
 
       <div className="flex flex-col sm:flex-row-reverse sm:items-center gap-4 sm:gap-6">
@@ -23,16 +33,16 @@ export default function Header() {
             onClick={() => setMenuOpen(!menuOpen)}
             type="button"
             aria-label="Toggle menu"
-            className="w-8 h-8 flex items-center justify-center transition sm:hidden z-20"
+            className="w-8 h-8 flex items-center justify-center transition lg:hidden z-20"
           >
             <RadarIcon isOpen={menuOpen} />
           </button>
         </div>
 
-        {/* Enlaces desplegables en móvil */}
+        {/* Menú móvil y tablet: visible hasta 1024px */}
         {menuOpen && (
           <div
-            className="sm:hidden absolute top-full right-6 mt-2 bg-black border border-gray-700 rounded shadow-lg flex flex-col w-40 z-10"
+            className="absolute top-full right-6 mt-2 bg-black border border-gray-700 rounded shadow-lg flex-col w-40 z-10 hidden max-lg:flex"
             onClick={() => setMenuOpen(false)}
           >
             <a
@@ -53,8 +63,8 @@ export default function Header() {
           </div>
         )}
 
-        {/* Enlaces en PC */}
-        <nav className="hidden sm:flex font-geistmono font-semibold text-sm text-gray-300 uppercase gap-6">
+        {/* Menú escritorio: visible solo desde 1025px */}
+        <nav className="hidden laptop:flex font-geistmono font-semibold text-sm text-gray-300 uppercase gap-6">
           <a href="#work" className="hover:text-white">
             {t("header.projects")}
           </a>
