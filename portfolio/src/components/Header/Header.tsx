@@ -9,7 +9,7 @@ export default function Header() {
   const [menuOpen, setMenuOpen] = useState(false);
 
   return (
-    <header className="bg-black text-white px-6 py-6 flex flex-row justify-between items-center gap-4 relative">
+    <header className="fixed top-0 left-0 w-full z-50 bg-black text-white px-6 py-6 flex flex-row justify-between items-center gap-4 border-b border-gray-500 border-opacity-50">
       <div className="font-bold tracking-tight uppercase text-left">
         {/* Móvil y tablet: visible en xs y md, oculta en lg */}
         <div className="flex flex-col lg:hidden text-xs md:text-xl">
