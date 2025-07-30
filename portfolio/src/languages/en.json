@@ -7,6 +7,9 @@
     "contact": "Contact",
     "contactBtn": "Get in Touch"
   },
+  "projects": {
+    "featured": "Featured Work"
+  },
   "footer": {
     "madeWith": "Made with ❤️ by"
   }

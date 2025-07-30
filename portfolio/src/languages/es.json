@@ -7,6 +7,9 @@
     "contact": "Contacto",
     "contactBtn": "Contacto"
   },
+  "projects": {
+    "featured": "Proyectos Destacados"
+  },
   "footer": {
     "madeWith": "Hecho con ❤️ por"
   }

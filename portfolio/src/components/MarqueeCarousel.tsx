@@ -1,3 +1,4 @@
+import { useMemo } from "react";
 import Marquee from "react-fast-marquee";
 
 type MarqueeCarouselProps = {
@@ -6,20 +7,18 @@ type MarqueeCarouselProps = {
 
 const images = import.meta.glob("../assets/img/**/**/*.webp", { eager: true });
 
-const imageMap = Object.entries(images).map(([path, mod]: [string, any]) => {
+const staticImageMap = Object.entries(images).map(([path, mod]: [string, any]) => {
   const src = mod.default;
-
   const match = path.match(/img\/([^/]+)\//);
   const targetId = match ? match[1] : "work";
-
   return { src, targetId };
 });
 
 export default function MarqueeCarousel({ direction = "left" }: MarqueeCarouselProps) {
-  const shuffled = [...imageMap].sort(() => Math.random() - 0.5);
+  const shuffled = useMemo(() => [...staticImageMap].sort(() => Math.random() - 0.5), []);
 
   return (
-    <div className="pb-4 pt-4 w-screen">
+    <div className="pb-4 w-screen">
       <Marquee
         pauseOnHover
         gradient={false}
